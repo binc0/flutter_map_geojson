@@ -284,7 +284,7 @@ class GeoJsonParser {
       point: point,
       height: 50,
       width: 50,
-      builder: (context) => defaultTappableMarker(properties, markerTapped),
+      child: defaultTappableMarker(properties, markerTapped),
     );
   }
 
@@ -304,8 +304,7 @@ class GeoJsonParser {
       points: outerRing,
       holePointsList: holesList,
       borderColor: defaultPolygonBorderColor!,
-      color: defaultPolygonFillColor!,
-      isFilled: defaultPolygonIsFilled!,
+      color: defaultPolygonIsFilled! ? defaultPolygonFillColor : null,
       borderStrokeWidth: defaultPolygonBorderStroke!,
     );
   }
